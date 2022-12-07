@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$font-text: 'Overpass';
+
+.sectionApp {
+  height: 100vh;
+}
+
+.gradientCyan {
+  background: linear-gradient(90deg, #42A1EE 0%, #63E7BB 85.02%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
