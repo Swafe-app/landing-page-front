@@ -1,0 +1,10 @@
+.sec3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  .cardLink {
+    width: 336px;
+  }
+}
