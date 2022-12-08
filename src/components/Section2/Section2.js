@@ -7,25 +7,25 @@ import './Section2.scss';
 
 const cardList = [
   {
-    title: "Marcher seul",
-    desc: "ne devrait pas être effrayant",
+    title: "Efrrayant ?",
+    desc: "Marcher seul ne devrait pas l’être",
     svg: <PersonWalk />
   },
   {
-    title: "Ayez de l’avance",
-    desc: "Certains dangers peuvent être connus et évités",
+    title: "Des dangers ?",
+    desc: "Ils peuvent être connu et évités",
     svg: <MapPin />
   },
   {
-    title: "Alertez les autres",
-    desc: "ne devrait pas être effrayant",
+    title: "Zones à éviter ?",
+    desc: "Il sera facile d’alerter des dangers",
     svg: <WarningCircle />
   },
   {
-    title: "SOS",
+    title: "Besoin d’aide ?",
     desc: (
       <span>
-        Demander de l’aide à un proche ou à la <span className='linkText'>DCSP</span> facilement et rapidement.
+        Appeler un proche ou <span className='linkText'>DCSP</span> facilement et rapidement
       </span>
     ),
     svg: <Community />
@@ -34,10 +34,11 @@ const cardList = [
 
 function Section2() {
   return (
-    <section className="sectionApp sec2">
+    <section className="sectionApp sec2" id="section2">
       <div className='secTitle'>
         <h3 className='headlineXLarge textGradientCyan'>Le concept, très rapidement</h3>
-        <h4 className='bodyXLarge'>Plus notre communauté préviendra des dangers, plus ils seront évités.</h4>
+        <h4 className='bodyXLarge'>Plus notre communauté préviendra des dangers, plus ils seront évités.
+        </h4>
       </div>
       <div className="cardContainer">
         {cardList.map((card, i) => (

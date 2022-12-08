@@ -32,10 +32,10 @@ const cardList = [
 
 function Section3() {
   return (
-    <section className="sectionApp sec3">
+    <section className="sectionApp sec3" id="section3">
       <div className='secTitle'>
-        <h3 className='headlineXLarge textGradientCyan'>Le concept, très rapidement</h3>
-        <h4 className='bodyXLarge'>Plus notre communauté préviendra des dangers, plus ils seront évités.</h4>
+        <h3 className='headlineXLarge textGradientCyan'>Notre solution</h3>
+        <h4 className='bodyXLarge'>Les fonctionnalités de notre application vous sont présentées en avant première</h4>
       </div>
       <div className="cardContainer">
         {cardList.map((card, i) => (

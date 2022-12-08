@@ -14,7 +14,6 @@
   left: 90px;
   right: 90px;
   margin-top: 20px;
-  height: 30px;
   display: flex;
   justify-content: space-between;
   background-color: #002B5D;
@@ -23,10 +22,15 @@
 
   .logoContainer {
     display: flex;
+    align-items: center;
+    fill: #FFFFFF;
 
-    img {
-      width: auto;
+    svg {
       height: 30px;
+    }
+
+    .cls-1 {
+      fill: #7ac943;
     }
   }
 

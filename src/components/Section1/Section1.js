@@ -1,25 +1,25 @@
 import './Section1.scss';
-import smalLogo from '../../assets/logoSmall2000.png';
+import { ReactComponent as SmalLogo } from '../../assets/logoSmall2000.svg';
 
 function Section1() {
   return (
     <section className="sectionApp sec1">
       <nav className='navbar'>
         <div className='logoContainer'>
-          <img src={smalLogo} alt='Logo' />
+          <SmalLogo />
         </div>
         <ul>
           <li>
-            <a className='bodyLarge' href='http://localhost:3000'>Notre Concept</a>
+            <a className='bodyLarge' href='#section2'>Notre Concept</a>
           </li>
           <li>
-            <a className='bodyLarge' href='http://localhost:3000'>Notre Solution</a>
+            <a className='bodyLarge' href='#section3'>Notre Solution</a>
           </li>
           <li>
-            <a className='bodyLarge' href='http://localhost:3000'>Suivez-nous</a>
+            <a className='bodyLarge' href='#section4'>Suivez-nous</a>
           </li>
           <li>
-            <a className='bodyLarge' href='http://localhost:3000'>Notre équipe</a>
+            <a className='bodyLarge' href='#section5'>Notre équipe</a>
           </li>
         </ul>
       </nav>

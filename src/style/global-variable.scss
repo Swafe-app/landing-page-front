@@ -6,12 +6,18 @@ $font-text: 'Overpass';
   padding: 0 90px;
 }
 
+.endPath {
+  width: 100%;
+  height: 370px;
+}
+
 .sectionApp {
   height: 100vh;
 }
 
 .secTitle {
   text-align: center;
+  max-width: 605px;
 
   h3 {
     margin-bottom: 8px;
@@ -35,4 +41,24 @@ $font-text: 'Overpass';
   background: #0095FF;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+#securePath {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+
+  @media screen and (max-width: 1024px){
+  }
+}
+
+.mapPinImage{
+  position: absolute;
+  width: 100px;
+  height: auto;
 }
