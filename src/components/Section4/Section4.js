@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { ReactComponent as CheckCircle } from '../../assets/checkCircle.svg';
+import { useState } from 'react';
 import './Section4.scss';
 
 function Section4() {
   const [email, setEmail] = useState('');
+  const [posted, setPosted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState({ msg: '', status: false });
 
   const submitMail = (e) => {
@@ -28,20 +31,29 @@ function Section4() {
     //     let token = res.data.csrf_token;
     requestOptions.body = JSON.stringify({ email: email });
 
-    fetch('http://10.58.129.49:8000/user/add/', requestOptions)
-      .then(res => res.json())
-      .then(res => {
-        console.log(res);
-        if (res.status_code !== 200) {
-          setError({ msg: res.data.errors[0].message, status: true })
-        } else {
-          setError({ msg: '', status: false })
-        }
-      })
-      .catch(err => {
-        console.log(JSON.stringify(err));
-        if (err?.data?.message) setError({ msg: err.data.message, status: true })
-      })
+    if (!loading) {
+      setLoading(true);
+      fetch('https://api.swafe.app/user/add/', requestOptions)
+        .then(res => res.json())
+        .then(res => {
+          console.log(res);
+          setLoading(false);
+          if (res.status_code !== 200) {
+            setError({ msg: res.data.errors[0].message, status: true })
+          } else {
+            setError({ msg: '', status: false })
+            setPosted(true)
+            setTimeout(() => {
+              setPosted(false)
+            }, 6000);
+          }
+        })
+        .catch(err => {
+          console.log(err);
+          setLoading(false);
+          if (err?.data?.message) setError({ msg: err.data.message, status: true })
+        })
+    }
     // })
     // .catch(err => {
     //   console.log(JSON.stringify(err));
@@ -59,15 +71,23 @@ function Section4() {
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className={error.status ? 'error' : ''}
+            className={`textInput ${error.status ? 'error' : ''}`}
             placeholder='Adresse e-mail*'
           />
           {error.status && <span>{error.msg}</span>}
         </div>
         <button type='submit' className='bodyXXLarge'>
-          Rester informé.e
+          {loading ? 'Loading...' : 'Rester informé.e'}
         </button>
       </form>
+      <div className={`snackbar ${posted && 'display'}`}>
+        <div className='svgCont'>
+          <CheckCircle />
+        </div>
+        <div className='text'>
+          <span className='bodyXXLarge'>Merci pour votre soutien.<br />Votre e-mail a bien été envoyé.</span>
+        </div>
+      </div>
     </section>
   )
 }

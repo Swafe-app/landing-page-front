@@ -1,5 +1,6 @@
 import mapPinFromImg from './assets/mapPinFrom.svg';
 import mapPinToImg from './assets/mapPinTo.svg';
+import dangerIconImg from './assets/danger.svg';
 
 function oTop(selector='', withHeight = 0) {
     if (!document.querySelector(selector)) {
@@ -93,6 +94,39 @@ class SecurePath {
         return path;
     }
 
+    generateFakePath(col=12, sX){
+        const path1 = [
+            [12, oTop('.sec2 .secTitle', 0) - 120],
+            [12, oTop('.sec2 .secTitle', 0)],
+        ];
+ 
+        const path2 = [
+            [2, oTop('.sec2 .secTitle', 0) - 320],
+            [2, oTop('.sec2 .secTitle', 0) - 120],
+        ];
+
+        const path3 = [
+            [4, oTop('.sec4', 0) + 120],
+            [2, oTop('.sec4', 0) + 120],
+        ];
+
+        return [path1, path2, path3];
+    }
+
+    generateDangerIcon(){
+        document.querySelectorAll('.dangerIcon').forEach(function(ico){
+            ico.remove();
+        });
+
+        const icons = [
+            [12, oTop('.sec2 .secTitle', 0)],
+            [2, oTop('.sec2 .secTitle', 0) - 320],
+            [2, oTop('.sec4', 0) + 120],
+        ];
+
+        return icons;
+    }
+
     draw(){
         const self = this;
         const ctx = this.canvas.getContext('2d');
@@ -100,6 +134,8 @@ class SecurePath {
         const sY = self.canvas.offsetHeight;
         const grid = this.generateGrid(12, sX);
         const path = this.generatePath(12, sX);
+        const fakePaths = this.generateFakePath(12, sX);
+        const dangerIcons = this.generateDangerIcon();
 
         this.canvas.width = sX;
         this.canvas.height = sY;        
@@ -127,12 +163,43 @@ class SecurePath {
         mapPinFrom.classList.add('mapPinImage');
         mapPinTo.classList.add('mapPinImage');
         document.body.append(mapPinFrom);
-        document.body.append(mapPinTo);
+        document.body.append(mapPinTo);    
         
+        dangerIcons.forEach(function(ico){
+            const icon = document.createElement('img');
+            icon.classList.add('dangerIcon');
+            icon.style.top = ico[1] - 60 + 'px';
+            icon.style.left = grid[ico[0]-1] - 28 + 'px';
+            icon.setAttribute('src', dangerIconImg);
+            document.body.append(icon);  
+        });
 
         const gradient = ctx.createLinearGradient(0, path[0][1], 0, sY);
         gradient.addColorStop(0, '#42a1ee');
         gradient.addColorStop(1, ' #63e7bb');
+
+        fakePaths.forEach(function(p){
+            ctx.beginPath();
+            ctx.lineWidth = 30;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.strokeStyle = '#E5EFF9';           
+
+            p.forEach(function(point, index){                          
+                const x = grid[point[0]-1];
+                const y = point[1];
+                
+                if(index===0){
+                    ctx.moveTo(x, y);
+                }else{
+                    ctx.lineTo(x, y);
+                }
+                ctx.stroke();
+            });
+
+            ctx.closePath();
+        });
+
 
         ctx.beginPath();
         ctx.lineWidth = 30;
@@ -149,7 +216,7 @@ class SecurePath {
                 ctx.lineTo(x, y);
             }
             ctx.stroke();
-        })
+        });
     }
 }
 

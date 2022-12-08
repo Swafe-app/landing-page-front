@@ -52,9 +52,18 @@
 
   svg {
     fill: #BABABA;
+    opacity: 1;
+    cursor: pointer;
 
-    &:hover {
+    &.hover {
       fill: #EEAD47;
+      opacity: .3;
+    }
+
+    &.active {
+      fill: #EEAD47;
+      opacity: 1;
+      cursor: default;
     }
   }
 }
