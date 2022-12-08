@@ -7,11 +7,11 @@ import './style/typo.scss';
 
 function App() {
   return (
-    <>
+    <div className='mainContainer'>
       <Section1 />
       <Section2 />
       <Section3 />
-    </>
+    </div>
   );
 }
 

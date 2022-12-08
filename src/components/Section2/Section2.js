@@ -36,7 +36,7 @@ function Section2() {
   return (
     <section className="sectionApp sec2">
       <div className='sec2Title'>
-        <h3 className='headlineXLarge gradientCyan'>Le concept, très rapidement</h3>
+        <h3 className='headlineXLarge textGradientCyan'>Le concept, très rapidement</h3>
         <h4 className='bodyXLarge'>Plus notre communauté préviendra des dangers, plus ils seront évités.</h4>
       </div>
       <div className="cardContainer">
