@@ -1,11 +1,10 @@
+@import '../../style/global-variable.scss';
+
 .sec3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 50px;
 
   .cardLink {
-    width: 336px;
+    min-width: 336px;
+    max-width: 336px;
   }
 }

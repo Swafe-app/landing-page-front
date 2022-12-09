@@ -36,8 +36,8 @@ function Section2() {
   return (
     <section className="sectionApp sec2" id="section2">
       <div className='secTitle'>
-        <h3 className='headlineXLarge textGradientCyan'>Le concept, très rapidement</h3>
-        <h4 className='bodyXLarge'>Plus notre communauté préviendra des dangers, plus ils seront évités.
+        <h3 className='textHeadline textGradientCyan'>Le concept, très rapidement</h3>
+        <h4 className='textBody'>Plus notre communauté préviendra des dangers, plus ils seront évités.
         </h4>
       </div>
       <div className="cardContainer">
@@ -47,7 +47,7 @@ function Section2() {
               {card.svg}
             </div>
             <div className='text'>
-              <span className='titleXLarge'>{card.title}</span>
+              <span className='textTitle'>{card.title}</span>
               <span className='bodyLarge'>{card.desc}</span>
             </div>
             <div className='end'>

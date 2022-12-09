@@ -63,8 +63,8 @@ function Section4() {
   return (
     <section className="sectionApp sec4" id="section4">
       <div className='secTitle'>
-        <h3 className='headlineXLarge textGradientCyan'>Suivez-nous dans notre projet</h3>
-        <h4 className='bodyXLarge'>Suivez notre projets de A à Z pour rassurer vos déplacements et être avertis sur nos avancées et nos fonctionnalités. SWAFE déplacez vous avec le sourire.</h4>
+        <h3 className='textHeadline textGradientCyan'>Suivez-nous dans notre projet</h3>
+        <h4 className='textBody'>Suivez notre projets de A à Z pour rassurer vos déplacements et être avertis sur nos avancées et nos fonctionnalités. SWAFE déplacez vous avec le sourire.</h4>
       </div>
       <form onSubmit={submitMail} className='inputContainer'>
         <div className='inputBox'>
@@ -74,9 +74,9 @@ function Section4() {
             className={`textInput ${error.status ? 'error' : ''}`}
             placeholder='Adresse e-mail*'
           />
-          {error.status && <span>{error.msg}</span>}
+          {error.status && <span className='textHint'>{error.msg}</span>}
         </div>
-        <button type='submit' className='bodyXXLarge'>
+        <button type='submit' className='textBody'>
           {loading ? 'Loading...' : 'Rester informé.e'}
         </button>
       </form>
@@ -85,7 +85,7 @@ function Section4() {
           <CheckCircle />
         </div>
         <div className='text'>
-          <span className='bodyXXLarge'>Merci pour votre soutien.<br />Votre e-mail a bien été envoyé.</span>
+          <span className='textBody'>Merci pour votre soutien.<br />Votre e-mail a bien été envoyé.</span>
         </div>
       </div>
     </section>

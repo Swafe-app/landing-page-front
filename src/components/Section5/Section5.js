@@ -10,24 +10,24 @@ import './Section5.scss';
 import './star.js';
 import { useEffect, useState } from 'react';
 
-const noteList = [
-  {
-    id: 1,
-    description: "Appuyez 2 secondes sur un bouton SOS pour avertir vos proches du danger qui vous guette.",
-  },
-  {
-    id: 2,
-    description: "Entrez votre itinéraire pour faciliter vos déplacement tout en évitant les zones à risque",
-  },
-  {
-    id: 3,
-    description: "Appuyer 2 secondes sur un bouton SOS.",
-  },
-  {
-    id: 4,
-    description: "Appuyer 2 secondes sur un bouton SOS pour avertir vos proches du danger qui vous guette.",
-  },
-]
+// const noteList = [
+//   {
+//     id: 1,
+//     description: "Appuyez 2 secondes sur un bouton SOS pour avertir vos proches du danger qui vous guette.",
+//   },
+//   {
+//     id: 2,
+//     description: "Entrez votre itinéraire pour faciliter vos déplacement tout en évitant les zones à risque",
+//   },
+//   {
+//     id: 3,
+//     description: "Appuyer 2 secondes sur un bouton SOS.",
+//   },
+//   {
+//     id: 4,
+//     description: "Appuyer 2 secondes sur un bouton SOS pour avertir vos proches du danger qui vous guette.",
+//   },
+// ]
 
 const profileList = [perso1, perso2, perso3, perso4, perso5, perso6]
 
@@ -86,8 +86,8 @@ function Section5() {
   return (
     <section className="sectionApp sec5" id="section5">
       <div className='secTitle'>
-        <h3 className='headlineXLarge textGradientCyan'>Notre équipe est à votre écoute</h3>
-        <h4 className='bodyXLarge'>Nous travaillons sur plusieurs fonctionnalités, mais nous souhaitons votre avis, c'est pour cela que vous pouvez noter les futures fonctionnalités afin de les prioriser.</h4>
+        <h3 className='textHeadline textGradientCyan'>Notre équipe est à votre écoute</h3>
+        <h4 className='textBody'>Nous travaillons sur plusieurs fonctionnalités, mais nous souhaitons votre avis, c'est pour cela que vous pouvez noter les futures fonctionnalités afin de les prioriser.</h4>
       </div>
       <div className='voteContainer'>
         {noteList ? (
@@ -122,7 +122,7 @@ function Section5() {
           <CheckCircle />
         </div>
         <div className='text'>
-          <span className='bodyXXLarge'>Merci pour votre soutien.<br />Votre vote a bien été envoyé.</span>
+          <span className='textBody'>Merci pour votre soutien.<br />Votre vote a bien été envoyé.</span>
         </div>
       </div>
     </section>

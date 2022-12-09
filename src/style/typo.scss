@@ -1,20 +1,14 @@
-@mixin laptop {
-  @media screen and (max-width: 1024px) {
-    @content;
-  }
-}
+@import './global-variable.scss';
 
-@mixin input($fontSize: 12px) {
+@mixin input() {
   // XXLarge
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: green;
 
   // XXSmall
-  @include laptop {
-    color: red;
+  @include mobile {
     font-size: 12px;
   }
 }
@@ -25,126 +19,140 @@
 
 // Hint
 
-.hintXLarge {
+@mixin hint() {
+  // XXLarge
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+
+  // XXSmall
+  @include mobile {
+    font-size: 10px;
+  }
 }
 
-.hintXXSmall {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 16px;
+.textHint {
+  @include hint()
 }
 
 // Display
 
-.displayXXLarge {
+@mixin display() {
+  // XXLarge
   font-style: normal;
   font-weight: 700;
-  font-size: 120px;
+  font-size: 40px;
   line-height: 91.51%;
+
+  // XLarge
+  @include laptop {
+    font-size: 36px;
+    line-height: 110%;
+  }
+
+  // XXSmall
+  @include mobile {
+    font-size: 32px;
+  }
 }
 
-.displayXLarge {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 110%;
+.textDisplay {
+  @include display()
 }
 
 // Headline
 
-.headlineXXLarge {
+@mixin headline() {
+  // XXLarge
   font-style: normal;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 40px;
   line-height: 115%;
+
+  // XLarge
+  @include laptop {
+    font-size: 36px;
+    line-height: 110%;
+  }
+
+  // XXSmall
+  @include mobile {
+    font-size: 20px;
+  }
 }
 
-.headlineXLarge {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 110%;
-}
-
-.headlineXXSmall {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 110%;
+.textHeadline {
+  @include headline()
 }
 
 // Title
 
-.titleXXLarge {
+@mixin title() {
+  // XXLarge
   font-style: normal;
   font-weight: 600;
   font-size: 32px;
   line-height: 115%;
+
+  // XLarge
+  @include laptop {
+    font-size: 20px;
+  }
+
+  // XXSmall
+  @include mobile {
+    font-size: 20px;
+  }
 }
 
-.titleXLarge {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 115%;
-}
-
-.titleXXSmall {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 115%;
+.textTitle {
+  @include title()
 }
 
 // Body
 
-.bodyXXLarge {
+@mixin body() {
+  // XXLarge
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 115%;
+
+  // XLarge
+  @include laptop {
+    font-size: 14px;
+    line-height: 110%;
+  }
+
+  // XXSmall
+  @include mobile {
+    font-size: 12px;
+    line-height: 115%;
+  }
 }
 
-.bodyXLarge {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 110%;
-}
-
-.bodyLarge {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 115%;
-}
-
-.bodyXXSmall {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 115%;
+.textBody {
+  @include body()
 }
 
 // Label
 
-.labelXXLarge {
+@mixin label() {
+  // XXLarge
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
+
+  // XXSmall
+  @include mobile {
+    font-size: 10px;
+  }
 }
 
-.labelXXSmall {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 10px;
-  line-height: 16px;
+.textLabel {
+  @include label()
 }
 
 .textBold {

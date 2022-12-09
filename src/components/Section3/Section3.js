@@ -34,8 +34,8 @@ function Section3() {
   return (
     <section className="sectionApp sec3" id="section3">
       <div className='secTitle'>
-        <h3 className='headlineXLarge textGradientCyan'>Notre solution</h3>
-        <h4 className='bodyXLarge'>Les fonctionnalités de notre application vous sont présentées en avant première</h4>
+        <h3 className='textHeadline textGradientCyan'>Notre solution</h3>
+        <h4 className='textBody'>Les fonctionnalités de notre application vous sont présentées en avant première</h4>
       </div>
       <div className="cardContainer">
         {cardList.map((card, i) => (
@@ -44,7 +44,7 @@ function Section3() {
               {card.svg}
             </div>
             <div className='text'>
-              <span className='titleXLarge'>{card.title}</span>
+              <span className='textTitle'>{card.title}</span>
               <span className='bodyLarge'>{card.desc}</span>
             </div>
             <div className='end'>

@@ -118,6 +118,10 @@ class SecurePath {
             ico.remove();
         });
 
+        document.querySelectorAll('.dangerIconBlur').forEach(function(blur){
+            blur.remove();
+        });
+
         const icons = [
             [12, oTop('.sec2 .secTitle', 0)],
             [2, oTop('.sec2 .secTitle', 0) - 320],
@@ -172,6 +176,12 @@ class SecurePath {
             icon.style.left = grid[ico[0]-1] - 28 + 'px';
             icon.setAttribute('src', dangerIconImg);
             document.body.append(icon);  
+
+            const blur = document.createElement('div');
+            blur.classList.add('dangerIconBlur');
+            blur.style.top = ico[1] + 'px';
+            blur.style.left = grid[ico[0]-1] + 'px';
+            document.body.append(blur); 
         });
 
         const gradient = ctx.createLinearGradient(0, path[0][1], 0, sY);
