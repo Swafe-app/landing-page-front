@@ -1,22 +1,31 @@
 import './Navbar.scss';
-import { ReactComponent as SmalLogo } from '../../assets/logoSmall2000.svg';
+import { ReactComponent as FacebookIcon } from '../../assets/FacebookIcon.svg';
+import { ReactComponent as InstagramIcon } from '../../assets/InstagramIcon.svg';
+import { ReactComponent as LinkedinIcon } from '../../assets/LinkedinIcon.svg';
+import SwafeLogo from '../../assets/SwafeLogo.png';
 
 function Navbar() {
   return (
     <nav className='navbar'>
       <div className='logoContainer'>
-        <SmalLogo />
+        <img src={SwafeLogo} alt='Swafe logo' />
       </div>
 
       <ul className='active'>
         <li>
-          <a className='bodyLarge' href='#temp'>Facebook icon</a>
+          <a className='bodyLarge' href='#temp'>
+            <FacebookIcon />
+          </a>
         </li>
         <li>
-          <a className='bodyLarge' href='#temp'>Instagram icon</a>
+          <a className='bodyLarge' href='#temp'>
+            <InstagramIcon />
+          </a>
         </li>
         <li>
-          <a className='bodyLarge' href='#temp'>Linkedin icon</a>
+          <a className='bodyLarge' href='#temp'>
+            <LinkedinIcon />
+          </a>
         </li>
       </ul>
     </nav>

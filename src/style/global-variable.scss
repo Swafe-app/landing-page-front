@@ -1,6 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;200;300;400;500;600;700;800;900&display=swap');
-$font-text: 'Overpass';
-
 @mixin laptop {
   @media screen and (max-width: 1920px) {
     @content;
@@ -8,7 +5,7 @@ $font-text: 'Overpass';
 }
 
 @mixin tablet {
-  @media screen and (max-width: 834px) {
+  @media screen and (max-width: 1024px) {
     @content;
   }
 }
@@ -23,14 +20,11 @@ body {
   overflow: hidden auto;
 }
 
+.mainContainer {
+  background: linear-gradient(180deg, #FDEFFB 0%, #8D6CAC 20.18%, #3D2773 32.92%, #150152 46.91%, #85B5E3 60.47%, #E5D3FE 74.75%, #FEB3FE 100%);
+}
+
 .sectionApp {
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  @include mobile {
-    align-items: initial;
-  }
 }

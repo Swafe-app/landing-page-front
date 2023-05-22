@@ -1,0 +1,58 @@
+@import '../../style/global-variable.scss';
+
+.header {
+  padding: 0 160px;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @include tablet {
+    justify-content: center;
+    padding: 0 40px;
+  }
+
+  @include mobile {
+    padding: 0 20px;
+  }
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  margin-top: 280px;
+
+  @include tablet {
+    margin-top: 260px;
+    flex-direction: column-reverse;
+    gap: 72px;
+  }
+
+  @include mobile {
+    margin-top: 148px;
+    gap: 60px;
+  }
+
+  h1 {
+    color: #012741;
+    max-width: 941px;
+
+    @include tablet {
+      max-width: 754px;
+      text-align: center;
+    }
+
+    @include mobile {
+      max-width: 335px;
+    }
+  }
+
+  img {
+    height: 558px;
+    width: 558px;
+
+    @include mobile {
+      height: 332px;
+      width: 332px;
+    }
+  }
+}

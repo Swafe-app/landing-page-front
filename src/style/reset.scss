@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import "./global-variable.scss";
 
 html, body, div, span, applet, object, iframe,
@@ -18,7 +19,7 @@ time, mark, audio, video, input, button {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	font-family: $font-text;
+	font-family: 'Ubuntu';
 	vertical-align: baseline;
 	box-sizing: border-box;
 }
