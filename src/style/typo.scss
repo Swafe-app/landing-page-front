@@ -16,13 +16,14 @@
 
   // Mobile
   @include mobile {
-    font-size: 20px;
-    line-height: 22px;
+    font-size: 22px;
+    line-height: 24.2px;
   }
 }
 
 .sectionTitle {
   // Desktop
+  font-family: 'Righteous';
   font-style: normal;
   font-weight: 400;
   font-size: 96px;
