@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import './SectionList.scss';
 
 const sectionListData = [
@@ -31,31 +31,40 @@ const sectionListData = [
 
 function SectionList() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const isScrolling = useRef(false);
 
-  const scrollToSection = (sectionIndex) => {
+  const scrollToSection = useCallback((sectionIndex) => {
     const section = document.querySelector(`#section-${sectionIndex}`);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
-  const handleScroll = (event) => {
-    if (event.deltaY > 0) {
-      // Scrolling down
-      setCurrentSectionIndex((index) => Math.min(index + 1, sectionListData.length));
+    isScrolling.current = true;
+    section.scrollIntoView({ behavior: 'smooth' });
+
+    setTimeout(() => {
+      isScrolling.current = false;
+    }, 1000);
+  }, []);
+
+  const handleSectionIndexChange = useCallback((direction) => {
+    if (isScrolling.current) return;
+
+    if (direction > 0) {
+      setCurrentSectionIndex((index) => Math.min(index + 1, sectionListData.length - 1));
     } else {
-      // Scrolling up
       setCurrentSectionIndex((index) => Math.max(index - 1, 0));
     }
-  };
+  }, []);
 
-  const handleArrowKey = (event) => {
-    if (event.keyCode === 40 || event.keyCode === 32 || event.keyCode === 39) {
-      setCurrentSectionIndex((index) => Math.min(index + 1, sectionListData.length));
-    } else if (event.keyCode === 38 || event.keyCode === 37) {
-      setCurrentSectionIndex((index) => Math.max(index - 1, 0));
+  const handleScroll = useCallback((event) => {
+    handleSectionIndexChange(Math.sign(event.deltaY));
+  }, [handleSectionIndexChange]);
+
+  const handleArrowKey = useCallback((event) => {
+    if ([40, 32, 39].includes(event.keyCode)) {
+      handleSectionIndexChange(1);
+    } else if ([38, 37].includes(event.keyCode)) {
+      handleSectionIndexChange(-1);
     }
-  }
+  }, [handleSectionIndexChange]);
 
   useEffect(() => {
     window.addEventListener('wheel', handleScroll);
@@ -64,29 +73,29 @@ function SectionList() {
       window.removeEventListener('wheel', handleScroll);
       window.removeEventListener('keydown', handleArrowKey);
     };
-  }, []);
+  }, [handleScroll, handleArrowKey]);
 
   useEffect(() => {
     scrollToSection(currentSectionIndex);
-  }, [currentSectionIndex]);
+  }, [currentSectionIndex, scrollToSection]);
+
+  const sections = useMemo(() => sectionListData.map((blockData, index) => (
+    <section
+      key={index}
+      id={`section-${index + 1}`}
+      className='sectionApp'
+      style={{ color: blockData.color }}
+    >
+      <h2 className='sectionTitle'>{blockData.title}</h2>
+      <span className='subTitle'>{blockData.subTitle}</span>
+    </section>
+  )), []);
 
   return (
     <>
-      {
-        sectionListData.map((blockData, index) => (
-          <section
-            key={index}
-            id={`section-${index + 1}`}
-            className='sectionApp'
-            style={{ color: blockData.color }}
-          >
-            <h2 className='sectionTitle'>{blockData.title}</h2>
-            <span className='subTitle'>{blockData.subTitle}</span>
-          </section>
-        ))
-      }
+      {sections}
     </>
-  )
+  );
 }
 
 export default SectionList;
