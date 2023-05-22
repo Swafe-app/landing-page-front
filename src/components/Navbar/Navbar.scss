@@ -1,0 +1,30 @@
+@import '../../style/global-variable.scss';
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 90px;
+  right: 90px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #002B5D;
+  border-radius: 20px;
+  padding: 20px;
+  z-index: 5;
+
+  .logoContainer {
+    display: flex;
+
+    svg {
+      height: 30px;
+    }
+  }
+
+  ul {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+}
