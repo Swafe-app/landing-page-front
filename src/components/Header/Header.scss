@@ -2,18 +2,26 @@
 
 .header {
   height: 100vh;
-  padding: 0 160px;
+  padding: 0 140px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @include tablet {
+  @include desktop-1680 {
+    padding: 0 100px;
+  }
+
+  @include desktop-1280 {
     padding: 0 60px;
   }
 
-  @include mobile {
+  @include tablet-834 {
     align-items: flex-start;
     padding: 0 40px;
+  }
+
+  @include mobile-428 {
+    padding: 0 20px;
   }
 }
 
@@ -22,28 +30,61 @@
   align-items: center;
   gap: 100px;
 
-  @include tablet {
-    justify-content: flex-end;
-    flex-direction: column-reverse;
+  @include desktop-1680 {
+    gap: 120px;
+  }
+
+  @include desktop-1440 {
     gap: 80px;
   }
 
-  @include mobile {
+  @include tablet-834 {
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    margin-top: 260px;
+    gap: 80px;
+  }
+
+  @include mobile-428 {
     margin-top: 148px;
     gap: 60px;
   }
 
   h1 {
     color: #012741;
-    max-width: 941px;
+    max-width: 982px;
 
-    @include tablet {
-      max-width: 754px;
+    @include desktop-1680 {
+      max-width: 802px;
+    }
+
+    @include desktop-1440 {
+      max-width: 660px;
+    }
+
+    @include desktop-1280 {
+      max-width: 680px;
       text-align: center;
     }
 
-    @include mobile {
+    @include tablet-834 {
+      max-width: 754px;
+    }
+
+    @include tablet-744 {
+      max-width: 664px;
+    }
+
+    @include mobile-428 {
       max-width: 335px;
+    }
+
+    @include mobile-375 {
+      max-width: 332px;
+    }
+
+    @include mobile-320 {
+      max-width: 280px;
     }
   }
 
@@ -51,14 +92,28 @@
     height: 558px;
     width: 558px;
 
-    @include tablet {
+    @include desktop-1440 {
+      height: 500px;
+      width: 500px;
+    }
+
+    @include desktop-1280 {
+      height: 400px;
+      width: 400px;
+    }
+
+    @include tablet-834 {
       width: 100%;
       height: fit-content;
       max-width: 480px;
     }
 
-    @include mobile {
+    @include mobile-428 {
       max-width: 332px;
+    }
+
+    @include mobile-428 {
+      max-width: 280px;
     }
   }
 }

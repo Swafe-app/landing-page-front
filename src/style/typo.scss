@@ -8,16 +8,41 @@
   line-height: 70.4px;
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
 
-  // Tablet
-  @include tablet {
+  @include desktop-1680 {
+    font-size: 60px;
+    line-height: 66px;
+  }
+
+  @include desktop-1440 {
+    font-size: 52px;
+    line-height: 57.2px;
+  }
+
+  @include desktop-1280 {
     font-size: 48px;
-    line-height: 53px;
+    line-height: 52.8px;
+  }
+
+  // Tablet
+  @include tablet-834 {
+    font-size: 44px;
+    line-height: 48.4px;
+  }
+  
+  @include tablet-744 {
+    font-size: 40px;
+    line-height: 44px;
   }
 
   // Mobile
-  @include mobile {
+  @include mobile-428 {
     font-size: 22px;
     line-height: 24.2px;
+  }
+  
+  @include mobile-320 {
+    font-size: 18px;
+    line-height: 19.8px;
   }
 }
 
@@ -30,16 +55,41 @@
   line-height: 105.6px;
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
 
+  @include desktop-1440 {
+    font-size: 88px;
+    line-height: 96.8px;
+  }
+
+  @include desktop-1280 {
+    font-size: 84px;
+    line-height: 92.4px;
+  }
+
+  @include desktop-1020 {
+    font-size: 72px;
+    line-height: 79.2px;
+  }
+
   // Tablet
-  @include tablet {
+  @include tablet-834 {
     font-size: 64px;
     line-height: 70.4px;
   }
+  
+  @include tablet-744 {
+    font-size: 52px;
+    line-height: 57.2px;
+  }
 
   // Mobile
-  @include mobile {
+  @include mobile-428 {
     font-size: 36px;
     line-height: 39.6px;
+  }
+  
+  @include mobile-320 {
+    font-size: 28px;
+    line-height: 30.8px;
   }
 }
 
@@ -51,15 +101,40 @@
   line-height: 70.4px;
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3);
 
+  @include desktop-1440 {
+    font-size: 60px;
+    line-height: 66px;
+  }
+
+  @include desktop-1280 {
+    font-size: 52px;
+    line-height: 57.2px;
+  }
+
+  @include desktop-1020 {
+    font-size: 44px;
+    line-height: 48.4px;
+  }
+
   // Tablet
-  @include tablet {
+  @include tablet-834 {
     font-size: 40px;
     line-height: 44px;
   }
+  
+  @include tablet-744 {
+    font-size: 36px;
+    line-height: 39.6px;
+  }
 
   // Mobile
-  @include mobile {
+  @include mobile-428 {
     font-size: 24px;
     line-height: 26.4px;
+  }
+  
+  @include mobile-320 {
+    font-size: 16px;
+    line-height: 17.6px;
   }
 }
