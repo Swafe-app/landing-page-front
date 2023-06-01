@@ -18,12 +18,12 @@ function Navbar() {
           </a>
         </li>
         <li>
-          <a className='bodyLarge' href='#temp'>
+          <a className='bodyLarge' href='https://www.instagram.com/swafe.app/'>
             <InstagramIcon />
           </a>
         </li>
         <li>
-          <a className='bodyLarge' href='#temp'>
+          <a className='bodyLarge' href='https://www.linkedin.com/company/swafe-app'>
             <LinkedinIcon />
           </a>
         </li>

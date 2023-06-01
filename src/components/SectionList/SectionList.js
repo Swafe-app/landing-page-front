@@ -48,7 +48,7 @@ function SectionList() {
     if (isScrolling.current) return;
 
     if (direction > 0) {
-      setCurrentSectionIndex((index) => Math.min(index + 1, sectionListData.length - 1));
+      setCurrentSectionIndex((index) => Math.min(index + 1, sectionListData.length));
     } else {
       setCurrentSectionIndex((index) => Math.max(index - 1, 0));
     }
