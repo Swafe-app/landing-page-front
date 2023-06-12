@@ -7,7 +7,6 @@ export function useScrollSection() {
   const sectionListRef = useRef(null);
 
   useEffect(() => {
-    console.log(currentSectionIndex, scrollDirection);
     isScrolling.current = true;
 
     const section = document.querySelector(`#section-${currentSectionIndex}`);
