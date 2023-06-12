@@ -7,7 +7,9 @@
 
 .stickman {
   position: fixed;
-  width: 550px;
+  width: 40%;
+  min-width: 450px;
+  max-width: 550px;
   height: fit-content;
   bottom: 0;
   left: 0;
