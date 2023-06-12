@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import './SectionList.scss';
 
 const sectionListData = [
@@ -30,55 +30,6 @@ const sectionListData = [
 ];
 
 function SectionList() {
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-  const isScrolling = useRef(false);
-
-  const scrollToSection = useCallback((sectionIndex) => {
-    const section = document.querySelector(`#section-${sectionIndex}`);
-
-    isScrolling.current = true;
-    section.scrollIntoView({ behavior: 'smooth' });
-
-    setTimeout(() => {
-      isScrolling.current = false;
-    }, 1000);
-  }, []);
-
-  const handleSectionIndexChange = useCallback((direction) => {
-    if (isScrolling.current) return;
-
-    if (direction > 0) {
-      setCurrentSectionIndex((index) => Math.min(index + 1, sectionListData.length));
-    } else {
-      setCurrentSectionIndex((index) => Math.max(index - 1, 0));
-    }
-  }, []);
-
-  const handleScroll = useCallback((event) => {
-    handleSectionIndexChange(Math.sign(event.deltaY));
-  }, [handleSectionIndexChange]);
-
-  const handleArrowKey = useCallback((event) => {
-    if ([40, 32, 39].includes(event.keyCode)) {
-      handleSectionIndexChange(1);
-    } else if ([38, 37].includes(event.keyCode)) {
-      handleSectionIndexChange(-1);
-    }
-  }, [handleSectionIndexChange]);
-
-  useEffect(() => {
-    window.addEventListener('wheel', handleScroll);
-    window.addEventListener('keydown', handleArrowKey);
-    return () => {
-      window.removeEventListener('wheel', handleScroll);
-      window.removeEventListener('keydown', handleArrowKey);
-    };
-  }, [handleScroll, handleArrowKey]);
-
-  useEffect(() => {
-    scrollToSection(currentSectionIndex);
-  }, [currentSectionIndex, scrollToSection]);
-
   const sections = useMemo(() => sectionListData.map((blockData, index) => (
     <section
       key={index}
