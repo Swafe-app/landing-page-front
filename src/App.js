@@ -13,7 +13,8 @@ import './style/global-variable.scss';
 import './style/reset.scss';
 import './style/typo.scss';
 import './App.scss';
-import { useScrollSection } from './components/ScrollSection/ScrollSection';
+import { useScrollSection } from './hooks/ScrollSection/ScrollSection';
+import FormsSection from './components/Forms/Forms';
 
 function App() {
   const { currentSectionIndex, scrollDirection } = useScrollSection();
@@ -44,6 +45,7 @@ function App() {
         <Navbar />
         <Header />
         <SectionList />
+        <FormsSection />
         <Lottie
           className='stickman-shadow'
           animationData={animationDataShadow}

@@ -1,0 +1,146 @@
+@import '../../style/global-variable.scss';
+
+.formsSection {
+  height: 100vh;
+  padding: 40px 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @include desktop-1680 {
+    padding: 40px 360px;
+  }
+
+  @include desktop-1440 {
+    padding: 40px 240px;
+  }
+
+  @include desktop-1280 {
+    padding: 40px 200px;
+  }
+
+  @include tablet-834 {
+    padding: 96px 20px 121px;
+  }
+
+  @include mobile-428 {
+    padding: 146px 20px;
+  }
+}
+
+.formsBeta {
+  max-width: 1080px;
+  max-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 40px;
+  gap: 60px;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 40px;
+  color: #012741;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .title {
+      font-family: 'Righteous';
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 35px;
+      text-align: center;
+    }
+
+    .subTitle {
+      font-family: 'Ubuntu';
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 35px;
+      text-align: center;
+    }
+  }
+
+  .formsContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 103px;
+
+    .formsFields {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+
+      .containerField {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 80px;
+        border-radius: 8px;
+        border: 1px solid #71787E;
+        color: #012741;
+        font-family: 'Overpass';
+        font-weight: 500;
+        font-size: 32px;
+
+        label {
+          position: absolute;
+          left: 20px;
+        }
+
+        input {
+          width: 100%;
+          height: 79px;
+          border-radius: 8px;
+          padding: 20px;
+        }
+
+        select {
+          width: fit-content;
+          height: 79px;
+          padding: 20px;
+          border-radius: 8px;
+        }
+      }
+
+      .rowFields {
+        display: flex;
+        gap: 12px;
+      }
+
+      .telephoneFields {
+        display: flex;
+        gap: 12px;
+
+        .phoneCode {
+          width: fit-content;
+        }
+      }
+    }
+
+    .validateButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      padding: 32px 24px 32px 16px;
+      background-color: #714DD8;
+      font-family: 'Overpass';
+      font-size: 32px;
+      font-weight: 500;
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+  }
+}

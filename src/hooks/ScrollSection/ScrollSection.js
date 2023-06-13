@@ -6,6 +6,11 @@ export function useScrollSection() {
   const isScrolling = useRef(false);
   const sectionListRef = useRef(null);
 
+  const setScrollHook = (pageIndex, direction) => {
+    setCurrentSectionIndex(pageIndex);
+    setScrollDirection(direction);
+  };
+
   useEffect(() => {
     isScrolling.current = true;
 
@@ -54,5 +59,5 @@ export function useScrollSection() {
     };
   }, [handleScroll, handleArrowKey]);
 
-  return { currentSectionIndex, scrollDirection };
+  return { currentSectionIndex, scrollDirection, setScrollHook };
 }
