@@ -18,12 +18,12 @@
     left: 100px;
     right: 100px;
   }
-  
+
   @include desktop-1280 {
     left: 60px;
     right: 60px;
   }
-  
+
   @include tablet-834 {
     left: 40px;
     right: 40px;
@@ -66,5 +66,33 @@
         }
       }
     }
+  }
+}
+
+.navbar.visible {
+  animation: visibleNavbar 0.8s ease-in-out forwards;
+}
+
+.navbar.none {
+  animation: hideNavbar 0.8s ease-in-out forwards;
+}
+
+@keyframes hideNavbar {
+  from {
+    top: 60px;
+  }
+
+  to {
+    top: -90px;
+  }
+}
+
+@keyframes visibleNavbar {
+  from {
+    top: -90px;
+  }
+
+  to {
+    top: 60px;
   }
 }
