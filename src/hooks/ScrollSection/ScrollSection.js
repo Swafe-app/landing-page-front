@@ -1,6 +1,8 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback, createContext, useContext } from 'react';
 
-export function useScrollSection() {
+const ScrollContext = createContext();
+
+export function ScrollSection() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [scrollDirection, setScrollDirection] = useState(null);
   const isScrolling = useRef(false);
@@ -60,4 +62,18 @@ export function useScrollSection() {
   }, [handleScroll, handleArrowKey]);
 
   return { currentSectionIndex, scrollDirection, setScrollHook };
+}
+
+export function ScrollProvider({ children }) {
+  const scrollSection = ScrollSection();
+  
+  return (
+    <ScrollContext.Provider value={scrollSection}>
+      {children}
+    </ScrollContext.Provider>
+  );
+}
+
+export function useScrollSection() {
+  return useContext(ScrollContext);
 }

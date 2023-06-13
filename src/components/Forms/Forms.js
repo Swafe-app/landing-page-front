@@ -18,16 +18,16 @@ function FormsSection() {
           <div className='formsFields'>
             <div className='rowFields'>
               <div className='containerField'>
-                <label for="phoneCode">Prénom</label>
+                <label htmlFor="phoneCode">Prénom</label>
                 <input id='Prénom' />
               </div>
               <div className='containerField'>
-                <label for="phoneCode">Nom</label>
+                <label htmlFor="phoneCode">Nom</label>
                 <input id='Nom' />
               </div>
             </div>
             <div className='containerField'>
-              <label for="phoneCode">E-mail</label>
+              <label htmlFor="phoneCode">E-mail</label>
               <input id='E-mail' />
             </div>
             <div className='telephoneFields'>
@@ -42,7 +42,7 @@ function FormsSection() {
                 </select>
               </div>
               <div className='containerField'>
-                <label for="phoneCode">Numéro de téléphone</label>
+                <label htmlFor="phoneCode">Numéro de téléphone</label>
                 <input id='phoneNumber' />
               </div>
             </div>
