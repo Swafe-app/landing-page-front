@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback, createContext, useContext } from 'react';
+import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 
 const ScrollContext = createContext();
 
@@ -21,7 +21,8 @@ export function ScrollSection() {
 
     setTimeout(() => {
       isScrolling.current = false;
-    }, !scrollDirection ? 0 : 3800);
+    }, (!scrollDirection || [6, 7].includes(currentSectionIndex)) ? 0 : 3800);
+
   }, [scrollDirection, currentSectionIndex]);
 
   const handleSectionIndexChange = useCallback((direction) => {
@@ -33,7 +34,7 @@ export function ScrollSection() {
 
     if (direction > 0) {
       setScrollDirection('down');
-      setCurrentSectionIndex((index) => Math.min(index + 1, sectionListRef.current.length - 1));
+      setCurrentSectionIndex((index) => Math.min(index + 1, sectionListRef.current.length));
     } else {
       setScrollDirection('up');
       setCurrentSectionIndex((index) => Math.max(index - 1, 0));
@@ -66,7 +67,7 @@ export function ScrollSection() {
 
 export function ScrollProvider({ children }) {
   const scrollSection = ScrollSection();
-  
+
   return (
     <ScrollContext.Provider value={scrollSection}>
       {children}

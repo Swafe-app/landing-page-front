@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Header from './components/Header/Header';
 import SectionList from './components/SectionList/SectionList';
+import Footer from './components/Footer/Footer';
 import Lottie from 'lottie-react';
 import stickmanWalkAnimation from './assets/StickmanWalk.json';
 import stickmanWalkAnimationShadow from './assets/StickmanWalkShadow.json';
@@ -57,7 +58,7 @@ function App() {
           loop={isLoop}
         />
       </div>
-      {/* Footer */}
+      <Footer />
     </div>
   );
 }

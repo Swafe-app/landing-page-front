@@ -72,6 +72,7 @@ function FormsSection() {
               <input
                 required
                 autoComplete="email"
+                type='email'
                 id='E-mail'
                 onChange={handleInputChange}
                 className={inputState["E-mail"] ? "filled" : ""}
@@ -93,6 +94,7 @@ function FormsSection() {
                 <input
                   autoComplete="tel-national"
                   id='phoneNumber'
+                  type="tel"
                   onChange={handleInputChange}
                   className={inputState.phoneNumber ? "filled" : ""}
                 />
