@@ -47,16 +47,18 @@ function App() {
         <Header />
         <SectionList />
         <FormsSection />
-        <Lottie
-          className='stickman-shadow'
-          animationData={animationDataShadow}
-          loop={isLoop}
-        />
-        <Lottie
-          className='stickman'
-          animationData={animationData}
-          loop={isLoop}
-        />
+        <div className='stickman-container'>
+          <Lottie
+            className='stickman-shadow'
+            animationData={animationDataShadow}
+            loop={isLoop}
+          />
+          <Lottie
+            className='stickman'
+            animationData={animationData}
+            loop={isLoop}
+          />
+        </div>
       </div>
       <Footer />
     </div>

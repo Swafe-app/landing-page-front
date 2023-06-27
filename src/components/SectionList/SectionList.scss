@@ -1,6 +1,7 @@
 @import '../../style/global-variable.scss';
 
 .sectionApp {
+  z-index: 1;
   padding: 0 140px;
   height: 100vh;
   display: flex;

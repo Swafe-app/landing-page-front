@@ -1,6 +1,7 @@
 @import '../../style/global-variable.scss';
 
 .formsSection {
+  z-index: 1;
   height: 100vh;
   padding: 40px 420px;
   display: flex;
