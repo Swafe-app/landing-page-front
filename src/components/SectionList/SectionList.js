@@ -1,12 +1,8 @@
 import { useMemo } from 'react';
 import './SectionList.scss';
+import Section1 from './Section1';
 
 const sectionListData = [
-  {
-    color: '#FFFFFF',
-    title: 'EFFRAYANT ?',
-    subTitle: 'Marcher seul ne devrait pas l’être'
-  },
   {
     color: '#FFFFFF',
     title: 'DANGEREUX ?',
@@ -33,7 +29,7 @@ function SectionList() {
   const sections = useMemo(() => sectionListData.map((blockData, index) => (
     <section
       key={index}
-      id={`section-${index + 1}`}
+      id={`section-${index + 2}`}
       className='sectionApp'
       style={{ color: blockData.color }}
     >
@@ -44,6 +40,7 @@ function SectionList() {
 
   return (
     <>
+      <Section1 />
       {sections}
     </>
   );
